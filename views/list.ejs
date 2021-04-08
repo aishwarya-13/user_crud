@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=pageTitle%></title>
+</head>
+<body>
+    <div>
+        <h1>List of all users</h1>
+        <% for(var item of result){%>
+        <ul>
+            <li>
+               <div>
+                <span><%= item.fname%></span>
+                <span><%= item.lname%></span>
+               </div>
+            </li>    
+        </ul>
+        <% }%>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=pageTitle%></title>
+</head>
+<body>
+    <form action=<%=isEdit ? "/user/update" : "/user/save" %> method="POST">
+        <div>
+            <div>
+                <label>First Name</label>
+                <input type="text" name="fname" value=<%=isEdit ? result && result.fname : '' %> ></input>
+            </div>
+            <div>
+                <label>Last Name</label>
+                <input type="text" name="lname" value=<%=isEdit ? result && result.lname : '' %> ></input>
+            </div>
+                <input type="hidden" name="id" value=<%=isEdit ? result && result.id : '' %> />
+                <button type="submit"><%=isEdit ? 'Update User' : 'Create User' %> </button>
+        </div>
+    </form>
+</body>
+</html>
