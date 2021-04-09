@@ -16,21 +16,23 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '/build')));
 //app.use(bodyParser.urlencoded({urlencoded: false}));
 
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 
-app.use(cors());
+if(process.env.NODE_ENV === `development`){
+    app.use(cors());
+}
+
 
 //Load login page
 // app.get('/login', (req, res)=>{
 //     res.status(200).render('login');
 // });
 
-if(process.env.NODE_ENV === `production`){
-    app.get('/', (req, res)=>{
-        res.sendFile(path.join(__dirname, '/build/index.html'));
-    });    
-}
-
+// if(process.env.NODE_ENV === `production`){
+//     app.get('/', (req, res)=>{
+//         res.sendFile(path.join(__dirname, '/build/index.html'));
+//     });    
+// }
 
 //Handle login
 app.post('/login', async (req, res)=>{
