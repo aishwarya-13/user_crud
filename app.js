@@ -18,9 +18,9 @@ app.use(express.static(path.join(__dirname, '/build')));
 
 //app.set('view engine', 'ejs');
 
-if(process.env.NODE_ENV === `development`){
+//if(process.env.NODE_ENV === `development`){
     app.use(cors());
-}
+//}
 
 
 //Load login page
