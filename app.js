@@ -87,7 +87,7 @@ app.use((req, res, next)=>{
 //     res.status(200).render('create', {pageTitle: 'Create', isEdit: false}); 
 // });
 
-//Create user
+//Create user - create user
 app.post('/user', async (req, res)=>{
     let query = '', result, {fname, lname} = req.body;
     if(fname && lname){
